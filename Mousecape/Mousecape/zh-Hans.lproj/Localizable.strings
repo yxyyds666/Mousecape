@@ -1,0 +1,146 @@
+/* SwiftUI: header title */
+"Import Cursors" = "导入光标";
+
+/* SwiftUI: header subtitle */
+"Import .cape files or convert Windows cursor themes" = "导入 .cape 文件或转换 Windows 光标主题";
+
+/* SwiftUI: convert button */
+"Convert" = "转换";
+
+/* SwiftUI: import button / Various panel titles and prompts */
+"Import" = "导入";
+
+/* SwiftUI: section header */
+"Imported Cursor Sets" = "已导入光标";
+
+/* SwiftUI: context menu */
+"Apply" = "应用";
+
+/* SwiftUI: context menu */
+"Duplicate" = "复制";
+
+/* SwiftUI: context menu */
+"Delete" = "删除";
+
+/* SwiftUI: context menu */
+"Edit..." = "编辑...";
+
+/* SwiftUI: context menu */
+"Show in Finder" = "在 Finder 中显示";
+
+/* SwiftUI: row badge */
+"Applied" = "已应用";
+
+/* Panel title for importing Windows cursor themes */
+"Convert Windows Cursor Theme" = "转换 Windows 光标主题";
+
+/* Panel message for selecting cursor theme folder */
+"Choose a folder with .inf file for Windows cursor theme" = "选择包含 .inf 文件的 Windows 光标主题文件夹";
+
+/* Panel message for cursor file selection */
+"Select .cur, .ani files or a Windows cursor theme folder." = "选择 .cur、.ani 文件或 Windows 光标主题文件夹。";
+
+/* Alert when import library is nil */
+"Cursor library object is empty" = "库对象为空";
+
+/* Alert title when import succeeds */
+"Import Complete" = "导入完成";
+
+/* Import result summary (Swift, %ld) */
+"Imported %@. %ld warnings, %ld skipped roles." = "已导入 %@。警告 %ld 条，跳过角色 %ld 个。";
+
+/* Import result summary (ObjC, %lu) */
+"Imported %@. %lu warnings, %lu skipped roles." = "已导入 %@。警告 %lu 条，跳过角色 %lu 个。";
+
+/* Import result with errors (Swift, %ld) */
+"Imported %@. %ld warnings, %ld skipped roles, %ld errors: %@" = "已导入 %@。警告 %ld 条，跳过 %ld 个角色，错误 %ld 个: %@";
+
+/* Alert title when import fails */
+"Import Failed" = "导入失败";
+
+/* Generic error detail */
+"Error: %@" = "错误: %@";
+
+/* Alert message when import fails */
+"Mousecape could not import this cursor." = "Mousecape 无法导入这个光标。";
+
+/* Alert button */
+"OK" = "OK";
+
+/* Importer warning: single .cur file uses Arrow by default */
+"Single file defaults to Arrow, editable in editor" = "单文件默认 Arrow，可在编辑器修改";
+
+/* Importer warning: nominal size was guessed */
+"%@: no nominal size, displaying at %dx%d." = "%@: 无标称尺寸，按 %dx%d 显示。";
+
+/* Importer warning: frame count exceeds maximum */
+"%@ has more than %lu frames, truncated." = "%@ 帧数超过 %lu，已截断。";
+
+/* Dump cursor progress separator (eg: 5 of 129) */
+"of" = "/";
+
+/* Window title bar accessory label for applied cape */
+"Applied Cape: " = "已应用光标: ";
+
+/* Window title bar accessory label when no cape is applied */
+"None" = "无";
+
+/* Helper tool: install success title */
+"Success" = "成功";
+
+/* Helper tool: install failure title */
+"Failure" = "失败";
+
+/* Helper tool: install success description */
+"The Mousecape helper was installed." = "Mousecape 辅助工具已安装。";
+
+/* Helper tool: uninstall success description */
+"The Mousecape helper was uninstalled." = "Mousecape 辅助工具已卸载。";
+
+/* Helper tool: failure fallback description */
+"The action did not complete successfully." = "操作未能成功完成。";
+
+/* Preferences window title */
+"Preferences" = "偏好设置";
+
+/* MightyMouse import panel message */
+"Choose a MightyMouse file to import" = "选择要导入的 MightyMouse 文件";
+
+/* MightyMouse import default author */
+"Unknown" = "未知";
+
+/* INF theme error: no INF file found */
+"Windows cursor theme contains no INF file." = "Windows 光标主题不包含 INF 文件。";
+
+/* INF theme error: unable to parse INF */
+"Unable to parse Windows cursor theme INF file." = "无法解析 Windows 光标主题 INF 文件。";
+
+/* INF theme error: missing cursor file for role */
+"Missing cursor file for role %@: %@" = "角色 %@ 缺少光标文件: %@";
+
+/* INF theme error: unable to parse cursor file for role */
+"Unable to parse cursor file for role %@: %@" = "无法解析角色 %@ 的光标文件: %@";
+
+/* Cursor file error: unsupported format */
+"Unsupported Windows cursor file type." = "不支持的 Windows 光标文件类型。";
+
+/* Cursor compose error: composition failed */
+"Unable to compose cursor frames for %@." = "无法合成 %@ 的光标帧。";
+
+/* Import path error: path does not exist */
+"Windows cursor path does not exist." = "Windows 光标路径不存在。";
+
+/* Import result error: no cursors imported */
+"No Windows cursors were imported." = "没有导入任何 Windows 光标。";
+
+/* Default library name for unnamed cursor themes */
+"Windows Cursor" = "Windows 光标";
+
+/* Helper tool: menu item title (install) */
+"Install Helper Tool" = "安装辅助工具";
+
+/* Helper tool: menu item title (uninstall) */
+"Uninstall Helper Tool" = "卸载辅助工具";
+
+/* Mousecape import panel message */
+"Choose a Mousecape to import" = "选择要导入的 Mousecape";

@@ -125,10 +125,16 @@ BOOL applyCape(NSDictionary *dictionary) {
             NSDictionary *cape = cursors[key];
             MMLog("Hooking for %s", key.UTF8String);
             
-            BOOL success = applyCapeForIdentifier(cape, key, NO);
-            if (!success) {
-                MMLog(BOLD RED "Failed to hook identifier %s for some unknown reason. Bailing out..." RESET, key.UTF8String);
-                return NO;
+            for (NSString *alias in MCCursorAliasesForIdentifier(key)) {
+                if (![alias isEqualToString:key] && cursors[alias]) {
+                    continue;
+                }
+
+                BOOL success = applyCapeForIdentifier(cape, alias, NO);
+                if (!success) {
+                    MMLog(BOLD RED "Failed to hook alias %s for identifier %s for some unknown reason. Bailing out..." RESET, alias.UTF8String, key.UTF8String);
+                    return NO;
+                }
             }
         }
         

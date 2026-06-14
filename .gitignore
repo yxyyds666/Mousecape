@@ -68,3 +68,14 @@ fastlane/test_output
 
 iOSInjectionProject/
 xcshareddata
+
+# IDE
+.vscode/
+.codegraph/
+jsconfig.json
+
+# Build artifacts
+*.dmg
+
+# Working docs
+docs/

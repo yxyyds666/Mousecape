@@ -26,7 +26,6 @@
 
 - (void)loadWindow {
     [super loadWindow];
-    [self windowDidLoad];
 }
 
 + (NSSet *)keyPathsForValuesAffectingCursorLibrary {
@@ -47,17 +46,15 @@
         return NO;
     }
     
-    NSBeginAlertSheet(
-                      NSLocalizedString(@"Do you want to save your changes?", "Save Prompt Title"),
-                      NSLocalizedString(@"Save", "Save Prompt Button"),
-                      NSLocalizedString(@"Cancel", "Save Prompt Button"),
-                      NSLocalizedString(@"Discard Changes", "Save Prompt Button"),
-                      self.window,
-                      self,
-                      NULL,
-                      @selector(sheetDidDismiss:returnCode:contextInfo:),
-                      (__bridge void *)nextLibrary,
-                      NSLocalizedString(@"Your changes will be discarded if you don't save them.", "Save prompt threat"));
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = NSLocalizedString(@"Do you want to save your changes?", "Save Prompt Title");
+    alert.informativeText = NSLocalizedString(@"Your changes will be discarded if you don't save them.", "Save prompt threat");
+    [alert addButtonWithTitle:NSLocalizedString(@"Save", "Save Prompt Button")];
+    [alert addButtonWithTitle:NSLocalizedString(@"Cancel", "Save Prompt Button")];
+    [alert addButtonWithTitle:NSLocalizedString(@"Discard Changes", "Save Prompt Button")];
+    [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+        [self sheetDidDismissWithReturnCode:returnCode contextInfo:nextLibrary];
+    }];
     return YES;
 }
 
@@ -87,10 +84,10 @@
     return self.cursorLibrary.undoManager;
 }
 
-- (void)sheetDidDismiss:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(MCCursorLibrary *)contextInfo {
-    if (returnCode == 0) { // cancel
+- (void)sheetDidDismissWithReturnCode:(NSModalResponse)returnCode contextInfo:(MCCursorLibrary *)contextInfo {
+    if (returnCode == NSAlertSecondButtonReturn) { // cancel
        // do nothing
-    } else if (returnCode == 1) { // save
+    } else if (returnCode == NSAlertFirstButtonReturn) { // save
         NSError *error = [self.cursorLibrary save];
         if (!error) {
             self.editListController.cursorLibrary = contextInfo;
@@ -98,9 +95,9 @@
             if (!contextInfo)
                 [self.window close];
         } else {
-            [NSApp presentError:error modalForWindow:self.window delegate:nil didPresentSelector:NULL contextInfo:nil];
+            [NSApp presentError:error];
         }
-    } else if (returnCode == -1) { // discard changes
+    } else if (returnCode == NSAlertThirdButtonReturn) { // discard changes
         [self.cursorLibrary revertToSaved];
         self.editListController.cursorLibrary = contextInfo;
         

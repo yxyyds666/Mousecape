@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5007EFCF64840DA3F3A5BB59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86C3A6E3B55D266646E8A729 /* Localizable.strings */; };
+		658D096A8ED85B72A526A591 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA6D7692AE63E90DD199E /* MainContentView.swift */; };
+		7464E7DBAD884DCEFC0EFC18 /* CursorRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCB84502D1C6ED955F28C02 /* CursorRowView.swift */; };
+		784DCF2ACAF8067CCC3F230B /* MCInfCursorThemeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB7394F2118C397DB0B4097 /* MCInfCursorThemeParser.m */; };
+		885E85D63F55158AE832CF44 /* MCWindowsCursorRoleMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 847210DCCB76584A3819B444 /* MCWindowsCursorRoleMapper.m */; };
+		ADC3B36C9C5F4029D9DF92A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 533EC8432B467397D45B3429 /* Localizable.strings */; };
+		AE46D246BC8B608148697F06 /* MCAniParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 89880118009A142E2FE3FBC8 /* MCAniParser.m */; };
+		B0FCD073D459D680265DD205 /* MCCurParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4E9565D5B4FB642729D1B2 /* MCCurParser.m */; };
+		B815E8A3B78D383CF111CC12 /* MCWindowsCursorFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = B94A75A5D854A635C5266226 /* MCWindowsCursorFrame.m */; };
+		CCB7960344CBC12EF4FADF64 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1CA15191B444B42CA08E04 /* LibraryViewModel.swift */; };
+		D7F7033CC461935255E1C649 /* MCWindowsCursorImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABBC4D8BF25A38BDBF6DFC2 /* MCWindowsCursorImporter.m */; };
+		F0B2EF5979543357F38382E6 /* MCWindowsCursorImportResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E0493A5C6F70AC1545B36577 /* MCWindowsCursorImportResult.m */; };
 		FA04886C189F58B1001F3AB5 /* Edit.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA048868189F58B1001F3AB5 /* Edit.xib */; };
 		FA04886D189F58B1001F3AB5 /* Library.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04886A189F58B1001F3AB5 /* Library.xib */; };
 		FA1DC01919527A73009E879C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA359844189DBA3800288163 /* SystemConfiguration.framework */; };
@@ -76,14 +88,14 @@
 		FAEE652D18A047E8003AA182 /* MCEditListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE651318A047E8003AA182 /* MCEditListController.m */; };
 		FAEE652E18A047E8003AA182 /* MCEditWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE651518A047E8003AA182 /* MCEditWindowController.m */; };
 		FAEE652F18A047E8003AA182 /* MCLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE651718A047E8003AA182 /* MCLibraryController.m */; };
-		FAEE653018A047E8003AA182 /* MCLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE651918A047E8003AA182 /* MCLibraryViewController.m */; };
 		FAEE653118A047E8003AA182 /* MCLibraryWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE651B18A047E8003AA182 /* MCLibraryWindowController.m */; };
 		FAEE653218A047E8003AA182 /* MCCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE651E18A047E8003AA182 /* MCCursor.m */; };
 		FAEE653318A047E8003AA182 /* MCCursorLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE652018A047E8003AA182 /* MCCursorLibrary.m */; };
 		FAEE653418A047E8003AA182 /* MCFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE652318A047E8003AA182 /* MCFormatters.m */; };
-		FAEE653518A047E8003AA182 /* MCCapeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE652618A047E8003AA182 /* MCCapeCellView.m */; };
 		FAEE653618A047E8003AA182 /* MMAnimatingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE652818A047E8003AA182 /* MMAnimatingImageView.m */; };
 		FAEE653918A048EA003AA182 /* MCSpriteLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEE653818A048EA003AA182 /* MCSpriteLayer.m */; };
+		FC9E5F6430FB8C1498B4A428 /* ImportHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D969E45182D2CDE142B0CA /* ImportHeaderView.swift */; };
+		FFD1D2A825928C7B30F0A205 /* MainSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E471DBA7110DF67E91971D6 /* MainSwiftViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +245,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03E702FB17142C706F8D9E71 /* MCWindowsCursorRoleMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MCWindowsCursorRoleMapper.h; sourceTree = "<group>"; };
+		05D1A07475CB2A399BF11AFC /* MCAniParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MCAniParser.h; sourceTree = "<group>"; };
+		44110B40F4FF853B4824ABEB /* MCCurParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MCCurParser.h; sourceTree = "<group>"; };
+		4ABBC4D8BF25A38BDBF6DFC2 /* MCWindowsCursorImporter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MCWindowsCursorImporter.m; sourceTree = "<group>"; };
+		4B1CA15191B444B42CA08E04 /* LibraryViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
+		511AA6D7692AE63E90DD199E /* MainContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
+		533EC8432B467397D45B3429 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7E471DBA7110DF67E91971D6 /* MainSwiftViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainSwiftViewController.swift; sourceTree = "<group>"; };
+		7F44CD5A8CC502A6E06F4562 /* MCWindowsCursorImporter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MCWindowsCursorImporter.h; sourceTree = "<group>"; };
+		847210DCCB76584A3819B444 /* MCWindowsCursorRoleMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MCWindowsCursorRoleMapper.m; sourceTree = "<group>"; };
+		86C3A6E3B55D266646E8A729 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		89880118009A142E2FE3FBC8 /* MCAniParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MCAniParser.m; sourceTree = "<group>"; };
+		8CCB84502D1C6ED955F28C02 /* CursorRowView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CursorRowView.swift; sourceTree = "<group>"; };
+		91D969E45182D2CDE142B0CA /* ImportHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImportHeaderView.swift; sourceTree = "<group>"; };
+		9EB0A2E12BDE94308C796AE3 /* MCWindowsCursorImportResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MCWindowsCursorImportResult.h; sourceTree = "<group>"; };
+		B12B7005DB90F1D1B65713E1 /* MCWindowsCursorFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MCWindowsCursorFrame.h; sourceTree = "<group>"; };
+		B94A75A5D854A635C5266226 /* MCWindowsCursorFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MCWindowsCursorFrame.m; sourceTree = "<group>"; };
+		CD4E9565D5B4FB642729D1B2 /* MCCurParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MCCurParser.m; sourceTree = "<group>"; };
+		CE7E928CC41FD4833726BB05 /* MCInfCursorThemeParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MCInfCursorThemeParser.h; sourceTree = "<group>"; };
+		E0493A5C6F70AC1545B36577 /* MCWindowsCursorImportResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MCWindowsCursorImportResult.m; sourceTree = "<group>"; };
+		E98E41B73491C8CA3B1284DB /* Mousecape-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mousecape-Bridging-Header.h"; sourceTree = "<group>"; };
+		EEB7394F2118C397DB0B4097 /* MCInfCursorThemeParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MCInfCursorThemeParser.m; sourceTree = "<group>"; };
 		FA048869189F58B1001F3AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Edit.xib; sourceTree = "<group>"; };
 		FA04886B189F58B1001F3AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Library.xib; sourceTree = "<group>"; };
 		FA1DC01719527A56009E879C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -346,8 +380,6 @@
 		FAEE651518A047E8003AA182 /* MCEditWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCEditWindowController.m; sourceTree = "<group>"; };
 		FAEE651618A047E8003AA182 /* MCLibraryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLibraryController.h; sourceTree = "<group>"; };
 		FAEE651718A047E8003AA182 /* MCLibraryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLibraryController.m; sourceTree = "<group>"; };
-		FAEE651818A047E8003AA182 /* MCLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLibraryViewController.h; sourceTree = "<group>"; };
-		FAEE651918A047E8003AA182 /* MCLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLibraryViewController.m; sourceTree = "<group>"; };
 		FAEE651A18A047E8003AA182 /* MCLibraryWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLibraryWindowController.h; sourceTree = "<group>"; };
 		FAEE651B18A047E8003AA182 /* MCLibraryWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLibraryWindowController.m; sourceTree = "<group>"; };
 		FAEE651D18A047E8003AA182 /* MCCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCursor.h; sourceTree = "<group>"; };
@@ -356,8 +388,6 @@
 		FAEE652018A047E8003AA182 /* MCCursorLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCursorLibrary.m; sourceTree = "<group>"; };
 		FAEE652218A047E8003AA182 /* MCFormatters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCFormatters.h; sourceTree = "<group>"; };
 		FAEE652318A047E8003AA182 /* MCFormatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCFormatters.m; sourceTree = "<group>"; };
-		FAEE652518A047E8003AA182 /* MCCapeCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCapeCellView.h; sourceTree = "<group>"; };
-		FAEE652618A047E8003AA182 /* MCCapeCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCapeCellView.m; sourceTree = "<group>"; };
 		FAEE652718A047E8003AA182 /* MMAnimatingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAnimatingImageView.h; sourceTree = "<group>"; };
 		FAEE652818A047E8003AA182 /* MMAnimatingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAnimatingImageView.m; sourceTree = "<group>"; };
 		FAEE653718A048EA003AA182 /* MCSpriteLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSpriteLayer.h; sourceTree = "<group>"; };
@@ -399,6 +429,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CCA3231797E6E6B2CE555610 /* importers */ = {
+			isa = PBXGroup;
+			children = (
+				7F44CD5A8CC502A6E06F4562 /* MCWindowsCursorImporter.h */,
+				4ABBC4D8BF25A38BDBF6DFC2 /* MCWindowsCursorImporter.m */,
+				44110B40F4FF853B4824ABEB /* MCCurParser.h */,
+				CD4E9565D5B4FB642729D1B2 /* MCCurParser.m */,
+				05D1A07475CB2A399BF11AFC /* MCAniParser.h */,
+				89880118009A142E2FE3FBC8 /* MCAniParser.m */,
+				CE7E928CC41FD4833726BB05 /* MCInfCursorThemeParser.h */,
+				EEB7394F2118C397DB0B4097 /* MCInfCursorThemeParser.m */,
+				03E702FB17142C706F8D9E71 /* MCWindowsCursorRoleMapper.h */,
+				847210DCCB76584A3819B444 /* MCWindowsCursorRoleMapper.m */,
+				B12B7005DB90F1D1B65713E1 /* MCWindowsCursorFrame.h */,
+				B94A75A5D854A635C5266226 /* MCWindowsCursorFrame.m */,
+				9EB0A2E12BDE94308C796AE3 /* MCWindowsCursorImportResult.h */,
+				E0493A5C6F70AC1545B36577 /* MCWindowsCursorImportResult.m */,
+			);
+			name = importers;
+			path = src/importers;
+			sourceTree = "<group>";
+		};
 		FA5107DD18A823BD00917185 /* MASPreferences */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +575,9 @@
 				FAC69F79189D603C00BC829D /* MainMenu.xib */,
 				FAC69F7C189D603C00BC829D /* Images.xcassets */,
 				FAC69F6B189D603C00BC829D /* Supporting Files */,
+				86C3A6E3B55D266646E8A729 /* Localizable.strings */,
+				533EC8432B467397D45B3429 /* Localizable.strings */,
+				CCA3231797E6E6B2CE555610 /* importers */,
 			);
 			path = Mousecape;
 			sourceTree = "<group>";
@@ -535,6 +590,7 @@
 				FAC69F70189D603C00BC829D /* main.m */,
 				FAC69F72189D603C00BC829D /* Mousecape-Prefix.pch */,
 				FAC69F73189D603C00BC829D /* Credits.rtf */,
+				E98E41B73491C8CA3B1284DB /* Mousecape-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -691,11 +747,11 @@
 				FAEE651518A047E8003AA182 /* MCEditWindowController.m */,
 				FAEE651618A047E8003AA182 /* MCLibraryController.h */,
 				FAEE651718A047E8003AA182 /* MCLibraryController.m */,
-				FAEE651818A047E8003AA182 /* MCLibraryViewController.h */,
-				FAEE651918A047E8003AA182 /* MCLibraryViewController.m */,
 				FAEE651A18A047E8003AA182 /* MCLibraryWindowController.h */,
 				FAEE651B18A047E8003AA182 /* MCLibraryWindowController.m */,
 				FA5107EF18A8253A00917185 /* Preferences */,
+				7E471DBA7110DF67E91971D6 /* MainSwiftViewController.swift */,
+				4B1CA15191B444B42CA08E04 /* LibraryViewModel.swift */,
 			);
 			name = controllers;
 			path = src/controllers;
@@ -726,14 +782,15 @@
 		FAEE652418A047E8003AA182 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				FAEE652518A047E8003AA182 /* MCCapeCellView.h */,
-				FAEE652618A047E8003AA182 /* MCCapeCellView.m */,
 				FAEE652718A047E8003AA182 /* MMAnimatingImageView.h */,
 				FAEE652818A047E8003AA182 /* MMAnimatingImageView.m */,
 				FAEE653718A048EA003AA182 /* MCSpriteLayer.h */,
 				FAEE653818A048EA003AA182 /* MCSpriteLayer.m */,
 				FADBC15218CE535200B9510F /* MCCapePreviewItem.h */,
 				FADBC15318CE535200B9510F /* MCCapePreviewItem.m */,
+				511AA6D7692AE63E90DD199E /* MainContentView.swift */,
+				91D969E45182D2CDE142B0CA /* ImportHeaderView.swift */,
+				8CCB84502D1C6ED955F28C02 /* CursorRowView.swift */,
 			);
 			name = views;
 			path = src/views;
@@ -952,6 +1009,8 @@
 				FAC69F75189D603C00BC829D /* Credits.rtf in Resources */,
 				FA5107E718A823BD00917185 /* MASPreferencesWindow.xib in Resources */,
 				FAC69F7B189D603C00BC829D /* MainMenu.xib in Resources */,
+				5007EFCF64840DA3F3A5BB59 /* Localizable.strings in Resources */,
+				ADC3B36C9C5F4029D9DF92A5 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -988,7 +1047,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABA44D521D9D947009B10D9 /* NSBitmapImageRep+ColorSpace.m in Sources */,
-				FAEE653018A047E8003AA182 /* MCLibraryViewController.m in Sources */,
 				FAEE653618A047E8003AA182 /* MMAnimatingImageView.m in Sources */,
 				FAEE653318A047E8003AA182 /* MCCursorLibrary.m in Sources */,
 				FAC69F78189D603C00BC829D /* MCAppDelegate.m in Sources */,
@@ -1020,7 +1078,18 @@
 				FA57339924954AB000103FCF /* RBLScrollView.m in Sources */,
 				FAEE652A18A047E8003AA182 /* NSOrderedSet+AZSortedInsert.m in Sources */,
 				FADBC15118CE51C000B9510F /* DTScrollView.m in Sources */,
-				FAEE653518A047E8003AA182 /* MCCapeCellView.m in Sources */,
+				D7F7033CC461935255E1C649 /* MCWindowsCursorImporter.m in Sources */,
+				B0FCD073D459D680265DD205 /* MCCurParser.m in Sources */,
+				AE46D246BC8B608148697F06 /* MCAniParser.m in Sources */,
+				784DCF2ACAF8067CCC3F230B /* MCInfCursorThemeParser.m in Sources */,
+				885E85D63F55158AE832CF44 /* MCWindowsCursorRoleMapper.m in Sources */,
+				B815E8A3B78D383CF111CC12 /* MCWindowsCursorFrame.m in Sources */,
+				F0B2EF5979543357F38382E6 /* MCWindowsCursorImportResult.m in Sources */,
+				658D096A8ED85B72A526A591 /* MainContentView.swift in Sources */,
+				FC9E5F6430FB8C1498B4A428 /* ImportHeaderView.swift in Sources */,
+				7464E7DBAD884DCEFC0EFC18 /* CursorRowView.swift in Sources */,
+				FFD1D2A825928C7B30F0A205 /* MainSwiftViewController.swift in Sources */,
+				CCB7960344CBC12EF4FADF64 /* LibraryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1232,12 +1301,14 @@
 		FAC69F93189D603C00BC829D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CODE_SIGN_ENTITLEMENTS = Mousecape/Mousecape.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3GD8ABJ22W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1247,9 +1318,12 @@
 					"$(LD_RUNPATH_SEARCH_PATHS_$(IS_MACCATALYST))",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alexzielenski.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mousecape-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1257,12 +1331,14 @@
 		FAC69F94189D603C00BC829D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CODE_SIGN_ENTITLEMENTS = Mousecape/Mousecape.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3GD8ABJ22W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1272,9 +1348,12 @@
 					"$(LD_RUNPATH_SEARCH_PATHS_$(IS_MACCATALYST))",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alexzielenski.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mousecape-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

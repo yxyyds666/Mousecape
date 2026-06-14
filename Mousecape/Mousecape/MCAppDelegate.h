@@ -11,4 +11,6 @@
 @interface MCAppDelegate : NSObject <NSApplicationDelegate>
 @property (assign) IBOutlet NSMenuItem *toggleHelperItem;
 @property (strong) MCLibraryWindowController *libraryWindowController;
+
+- (IBAction)importWindowsCursor:(id)sender;
 @end

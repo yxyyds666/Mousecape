@@ -46,7 +46,9 @@ void backupAllCursors() {
     NSUInteger i = 0;
     NSString *key = nil;
     while ((key = defaultCursors[i]) != nil) {
-        backupCursorForIdentifier(key);
+        for (NSString *alias in MCCursorAliasesForIdentifier(key)) {
+            backupCursorForIdentifier(alias);
+        }
         i++;
     }
     // no need to backup core cursors

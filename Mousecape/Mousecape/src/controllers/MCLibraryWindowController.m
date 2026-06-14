@@ -1,56 +1,54 @@
-//
-//  MCLbraryWindowController.m
-//  Mousecape
-//
-//  Created by Alex Zielenski on 2/2/14.
-//  Copyright (c) 2014 Alex Zielenski. All rights reserved.
-//
-
 #import "MCLibraryWindowController.h"
+#import "NSFileManager+DirectoryLocations.h"
+#import "Mousecape-Swift.h"
 
 @interface MCLibraryWindowController ()
 - (void)composeAccessory;
+- (void)applyMinimalImportAppearance;
 @end
 
 @implementation MCLibraryWindowController
 
 - (void)awakeFromNib {
+    [self applyMinimalImportAppearance];
     [self composeAccessory];
-}
-
-- (id)initWithWindow:(NSWindow *)window {
-    if ((self = [super initWithWindow:window])) {
-        
-    }
-    return self;
-}
-
-- (void)windowDidLoad {
-    NSLog(@"window load");
-    [super windowDidLoad];
-    [self composeAccessory];
+    [self setupSwiftContent];
 }
 
 - (NSString *)windowNibName {
     return @"Library";
 }
 
+- (MCLibraryController *)libraryController {
+    return self.mainViewController.libraryController;
+}
+
+- (void)setupSwiftContent {
+    NSString *capesPath = [[NSFileManager defaultManager] findOrCreateDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appendPathComponent:@"Mousecape/capes" error:NULL];
+    MCLibraryController *controller = [[MCLibraryController alloc] initWithURL:[NSURL fileURLWithPath:capesPath]];
+    self.mainViewController = [[MainSwiftViewController alloc] initWithController:controller];
+    self.window.contentViewController = self.mainViewController;
+}
+
 - (void)composeAccessory {
+    if (self.appliedAccessory.superview) {
+        return;
+    }
     NSView *themeFrame = [self.window.contentView superview];
     NSView *accessory = self.appliedAccessory;
     [accessory setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
+
     NSRect c  = themeFrame.frame;
     NSRect aV = accessory.frame;
     NSRect newFrame = NSMakeRect(
-                                 c.size.width - aV.size.width,	// x position
-                                 c.size.height - aV.size.height,	// y position
-                                 aV.size.width,	// width
-                                 aV.size.height);	// height
-    
+                                 c.size.width - aV.size.width,
+                                 c.size.height - aV.size.height,
+                                 aV.size.width,
+                                 aV.size.height);
+
     [accessory setFrame:newFrame];
     [themeFrame addSubview:accessory];
-    
+
     [themeFrame addConstraints:[NSLayoutConstraint
                                 constraintsWithVisualFormat:@"H:|-(>=100)-[accessory(245)]-(0)-|"
                                 options:0
@@ -63,8 +61,13 @@
                                 views:NSDictionaryOfVariableBindings(accessory)]];
 }
 
+- (void)applyMinimalImportAppearance {
+    self.window.title = NSLocalizedString(@"Import Cursors", @"Window title for cursor import");
+    self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameDarkAqua];
+}
+
 - (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
-    return self.libraryViewController.libraryController.undoManager;
+    return self.libraryController.undoManager;
 }
 
 #pragma mark - Menu Actions
@@ -72,59 +75,53 @@
 - (IBAction)applyCapeAction:(NSMenuItem *)sender {
     MCCursorLibrary *cape = nil;
     if (sender.tag == -1)
-        cape = self.libraryViewController.clickedCape;
+        cape = self.mainViewController.clickedCape;
     else
-        cape = self.libraryViewController.selectedCape;
-    
-    [self.libraryViewController.libraryController applyCape:cape];
+        cape = self.mainViewController.selectedCape;
+    [self.libraryController applyCape:cape];
 }
 
 - (IBAction)editCapeAction:(NSMenuItem *)sender {
     MCCursorLibrary *cape = nil;
     if (sender.tag == -1)
-        cape = self.libraryViewController.clickedCape;
+        cape = self.mainViewController.clickedCape;
     else
-        cape = self.libraryViewController.selectedCape;
-    
-    [self.libraryViewController editCape:cape];
+        cape = self.mainViewController.selectedCape;
+    [self.mainViewController editCape:cape];
 }
 
 - (IBAction)removeCapeAction:(NSMenuItem *)sender {
     MCCursorLibrary *cape = nil;
     if (sender.tag == -1)
-        cape = self.libraryViewController.clickedCape;
+        cape = self.mainViewController.clickedCape;
     else
-        cape = self.libraryViewController.selectedCape;
-    
-    if (cape != self.libraryViewController.editingCape) {
-        [self.libraryViewController.libraryController removeCape:cape];
+        cape = self.mainViewController.selectedCape;
+    if (cape != self.mainViewController.editingCape) {
+        [self.libraryController removeCape:cape];
     } else {
         [[NSSound soundNamed:@"Funk"] play];
-        [self.libraryViewController editCape:self.libraryViewController.editingCape];
+        [self.mainViewController editCape:self.mainViewController.editingCape];
     }
 }
 
 - (IBAction)duplicateCapeAction:(NSMenuItem *)sender {
     MCCursorLibrary *cape = nil;
     if (sender.tag == -1)
-        cape = self.libraryViewController.clickedCape;
+        cape = self.mainViewController.clickedCape;
     else
-        cape = self.libraryViewController.selectedCape;
-    
-    [self.libraryViewController.libraryController importCape:cape.copy];
+        cape = self.mainViewController.selectedCape;
+    [self.libraryController importCape:cape.copy];
 }
 
 - (IBAction)checkCapeAction:(NSMenuItem *)sender {
-    
 }
 
 - (IBAction)showCapeAction:(NSMenuItem *)sender {
     MCCursorLibrary *cape = nil;
     if (sender.tag == -1)
-        cape = self.libraryViewController.clickedCape;
+        cape = self.mainViewController.clickedCape;
     else
-        cape = self.libraryViewController.selectedCape;
-    
+        cape = self.mainViewController.selectedCape;
     [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[ cape.fileURL ]];
 }
 
@@ -134,7 +131,7 @@
     self.progressBar.doubleValue = 0.0;
     [self.progressBar setIndeterminate:NO];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        [weakSelf.libraryViewController.libraryController dumpCursorsWithProgressBlock:^BOOL (NSUInteger current, NSUInteger total) {
+        [weakSelf.libraryController dumpCursorsWithProgressBlock:^BOOL (NSUInteger current, NSUInteger total) {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 weakSelf.progressField.stringValue = [NSString stringWithFormat:@"%lu %@ %lu", (unsigned long)current, NSLocalizedString(@"of", @"Dump cursor progress separator (eg: 5 of 129)"), (unsigned long)total];
                 weakSelf.progressBar.minValue = 0;
@@ -149,7 +146,6 @@
             [[NSCursor arrowCursor] set];
         });
     });
-
 }
 
 @end

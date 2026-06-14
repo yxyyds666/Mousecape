@@ -36,7 +36,9 @@ void resetAllCursors() {
     NSUInteger i = 0;
     NSString *key = nil;
     while ((key = defaultCursors[i]) != nil) {
-        restoreCursorForIdentifier(backupStringForIdentifier(key));
+        for (NSString *alias in MCCursorAliasesForIdentifier(key)) {
+            restoreCursorForIdentifier(backupStringForIdentifier(alias));
+        }
         i++;
     }
 

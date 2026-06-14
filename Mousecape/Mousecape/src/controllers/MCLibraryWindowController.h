@@ -1,16 +1,11 @@
-//
-//  MCLbraryWindowController.h
-//  Mousecape
-//
-//  Created by Alex Zielenski on 2/2/14.
-//  Copyright (c) 2014 Alex Zielenski. All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
-#import "MCLibraryViewController.h"
+
+@class MainSwiftViewController;
+@class MCLibraryController;
 
 @interface MCLibraryWindowController : NSWindowController <NSWindowDelegate>
-@property (weak) IBOutlet MCLibraryViewController *libraryViewController;
+@property (strong) MainSwiftViewController *mainViewController;
+@property (readonly) MCLibraryController *libraryController;
 @property (weak) IBOutlet NSView *appliedAccessory;
 @property (weak) IBOutlet NSProgressIndicator *progressBar;
 @property (weak) IBOutlet NSTextField *progressField;

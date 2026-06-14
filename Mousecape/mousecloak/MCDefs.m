@@ -226,3 +226,35 @@ BOOL MCCursorIsPointer(NSString *identifier) {
 
     return [pointers containsObject:identifier];
 }
+
+BOOL MCCursorIdentifierNeedsDynamicAliases(NSString *identifier) {
+    return [identifier isEqualToString:@"com.apple.coregraphics.Arrow"] || [identifier isEqualToString:@"com.apple.coregraphics.IBeam"];
+}
+
+NSArray<NSString *> *MCCursorAliasesForIdentifier(NSString *identifier) {
+    if (!identifier.length)
+        return @[];
+
+    NSMutableArray<NSString *> *aliases = [NSMutableArray arrayWithObject:identifier];
+
+    if (!MCCursorIdentifierNeedsDynamicAliases(identifier))
+        return aliases;
+
+    for (CGSCursorID cursor = 0; cursor <= 127; cursor++) {
+        char *cursorName = CGSCursorNameForSystemCursor(cursor);
+        if (!cursorName)
+            continue;
+
+        NSString *alias = [NSString stringWithUTF8String:cursorName];
+        if (!alias.length || [aliases containsObject:alias])
+            continue;
+
+        BOOL matchesArrow = [identifier isEqualToString:@"com.apple.coregraphics.Arrow"] && [alias rangeOfString:@"arrow" options:NSCaseInsensitiveSearch].location != NSNotFound;
+        BOOL matchesIBeam = [identifier isEqualToString:@"com.apple.coregraphics.IBeam"] && ([alias rangeOfString:@"ibeam" options:NSCaseInsensitiveSearch].location != NSNotFound || [alias rangeOfString:@"i-beam" options:NSCaseInsensitiveSearch].location != NSNotFound);
+
+        if (matchesArrow || matchesIBeam)
+            [aliases addObject:alias];
+    }
+
+    return aliases;
+}

@@ -78,22 +78,28 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="File" id="83">
-                    <menu key="submenu" title="File" id="81">
+                <menuItem title="文件" id="83">
+                    <menu key="submenu" title="文件" id="81">
                         <items>
-                            <menuItem title="New Cape" keyEquivalent="n" id="82">
+                            <menuItem title="新建光标包" keyEquivalent="n" id="82">
                                 <connections>
                                     <action selector="newDocument:" target="-1" id="I3c-Gd-Cqc"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Import Cape" keyEquivalent="o" id="kdx-d9-Lek">
+                            <menuItem title="导入光标包" keyEquivalent="o" id="kdx-d9-Lek">
                                 <connections>
                                     <action selector="openDocument:" target="-1" id="2Qd-t2-zEv"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Import MightyMouse" keyEquivalent="i" id="l3B-n8-21Z">
+                            <menuItem title="导入 MightyMouse" keyEquivalent="i" id="l3B-n8-21Z">
                                 <connections>
                                     <action selector="convertCape:" target="494" id="vs2-8F-92y"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="导入光标…" id="900">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="importWindowsCursor:" target="494" id="901"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="79">
@@ -326,11 +332,11 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Capes" id="g8O-f8-aKi">
+                <menuItem title="光标包" id="g8O-f8-aKi">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Capes" id="ttR-pS-Pk1">
+                    <menu key="submenu" title="光标包" id="ttR-pS-Pk1">
                         <items>
-                            <menuItem title="Apply Cape" id="ieJ-T1-eH7">
+                            <menuItem title="应用光标包" id="ieJ-T1-eH7">
                                 <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -338,12 +344,12 @@ DQ
                                     <action selector="applyCapeAction:" target="-1" id="RAI-pM-j7M"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Edit Cape" keyEquivalent="e" id="5qb-Dw-38q">
+                            <menuItem title="编辑光标包" keyEquivalent="e" id="5qb-Dw-38q">
                                 <connections>
                                     <action selector="editCapeAction:" target="-1" id="E2d-D2-Hj9"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Remove Cape" id="LHh-1u-bK8">
+                            <menuItem title="移除光标包" id="LHh-1u-bK8">
                                 <string key="keyEquivalent" base64-UTF8="YES">
 CA
 </string>
@@ -351,7 +357,7 @@ CA
                                     <action selector="removeCapeAction:" target="-1" id="RE5-YE-iAt"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Duplicate Cape" keyEquivalent="S" id="d9b-6w-ubr">
+                            <menuItem title="复制光标包" keyEquivalent="S" id="d9b-6w-ubr">
                                 <connections>
                                     <action selector="duplicateCapeAction:" target="-1" id="Nj7-Uf-gOO"/>
                                 </connections>
@@ -362,18 +368,18 @@ CA
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="EOT-Rk-oU3"/>
-                            <menuItem title="Show in Finder" id="PAd-kz-Eoi">
+                            <menuItem title="在访达中显示" id="PAd-kz-Eoi">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showCapeAction:" target="-1" id="9mC-pd-eiq"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Restore Defaults" keyEquivalent="r" id="uCE-YB-8VL">
+                            <menuItem title="恢复默认光标" keyEquivalent="r" id="uCE-YB-8VL">
                                 <connections>
                                     <action selector="restoreCape:" target="494" id="2ve-Ez-ktd"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Dump Cursors…" id="CYY-iE-0bP">
+                            <menuItem title="导出现有光标…" id="CYY-iE-0bP">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="dumpCapeAction:" target="-1" id="B89-Hc-T1C"/>

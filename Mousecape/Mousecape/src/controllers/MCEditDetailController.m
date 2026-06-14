@@ -66,7 +66,7 @@
 - (void)imageView:(MMAnimatingImageView *)imageView didAcceptDroppedImages:(NSArray *)images {
     MCCursorScale scale = cursorScaleForScale(imageView.scale);
     
-    if (NSEvent.modifierFlags == NSAlternateKeyMask) {
+    if ((NSEvent.modifierFlags & NSEventModifierFlagOption) != 0) {
         [self.cursor addFrame:[MCCursor composeRepresentationWithFrames:images] forScale:scale];
     } else {
         [self.cursor setRepresentation:[MCCursor composeRepresentationWithFrames:images] forScale:scale];
@@ -100,4 +100,3 @@
 }
 
 @end
-

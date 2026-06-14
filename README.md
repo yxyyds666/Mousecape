@@ -3,6 +3,10 @@ Mousecape
 
 A free cursor manager for Mac OS 10.8+ built using private, nonintrusive CoreGraphics APIs.
 
+## macOS 26+
+
+This development branch targets macOS 26 and later. It includes Tahoe/macOS 26 cursor compatibility work, helper reapply updates, and Windows cursor import support.
+
 ![](https://github.com/alexzielenski/Mousecape/raw/master/screenshot.png)
 
 ## How it works

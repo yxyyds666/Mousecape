@@ -1,0 +1,146 @@
+/* SwiftUI: header title */
+"Import Cursors" = "Import Cursors";
+
+/* SwiftUI: header subtitle */
+"Import .cape files or convert Windows cursor themes" = "Import .cape files or convert Windows cursor themes";
+
+/* SwiftUI: convert button */
+"Convert" = "Convert";
+
+/* SwiftUI: import button / Various panel titles and prompts */
+"Import" = "Import";
+
+/* SwiftUI: section header */
+"Imported Cursor Sets" = "Imported Cursor Sets";
+
+/* SwiftUI: context menu */
+"Apply" = "Apply";
+
+/* SwiftUI: context menu */
+"Duplicate" = "Duplicate";
+
+/* SwiftUI: context menu */
+"Delete" = "Delete";
+
+/* SwiftUI: context menu */
+"Edit..." = "Edit...";
+
+/* SwiftUI: context menu */
+"Show in Finder" = "Show in Finder";
+
+/* SwiftUI: row badge */
+"Applied" = "Applied";
+
+/* Panel title for importing Windows cursor themes */
+"Convert Windows Cursor Theme" = "Convert Windows Cursor Theme";
+
+/* Panel message for selecting cursor theme folder */
+"Choose a folder with .inf file for Windows cursor theme" = "Choose a folder with .inf file for Windows cursor theme";
+
+/* Panel message for cursor file selection */
+"Select .cur, .ani files or a Windows cursor theme folder." = "Select .cur, .ani files or a Windows cursor theme folder.";
+
+/* Alert when import library is nil */
+"Cursor library object is empty" = "Cursor library object is empty";
+
+/* Alert title when import succeeds */
+"Import Complete" = "Import Complete";
+
+/* Import result summary (Swift, %ld) */
+"Imported %@. %ld warnings, %ld skipped roles." = "Imported %@. %ld warnings, %ld skipped roles.";
+
+/* Import result summary (ObjC, %lu) */
+"Imported %@. %lu warnings, %lu skipped roles." = "Imported %@. %lu warnings, %lu skipped roles.";
+
+/* Import result with errors (Swift, %ld) */
+"Imported %@. %ld warnings, %ld skipped roles, %ld errors: %@" = "Imported %@. %ld warnings, %ld skipped roles, %ld errors: %@";
+
+/* Alert title when import fails */
+"Import Failed" = "Import Failed";
+
+/* Generic error detail */
+"Error: %@" = "Error: %@";
+
+/* Alert message when import fails */
+"Mousecape could not import this cursor." = "Mousecape could not import this cursor.";
+
+/* Alert button */
+"OK" = "OK";
+
+/* Importer warning: single .cur file uses Arrow by default */
+"Single file defaults to Arrow, editable in editor" = "Single file defaults to Arrow, editable in editor";
+
+/* Importer warning: nominal size was guessed */
+"%@: no nominal size, displaying at %dx%d." = "%@: no nominal size, displaying at %dx%d.";
+
+/* Importer warning: frame count exceeds maximum */
+"%@ has more than %lu frames, truncated." = "%@ has more than %lu frames, truncated.";
+
+/* Dump cursor progress separator (eg: 5 of 129) */
+"of" = "of";
+
+/* Window title bar accessory label for applied cape */
+"Applied Cape: " = "Applied Cape: ";
+
+/* Window title bar accessory label when no cape is applied */
+"None" = "None";
+
+/* Helper tool: install success title */
+"Success" = "Success";
+
+/* Helper tool: install failure title */
+"Failure" = "Failure";
+
+/* Helper tool: install success description */
+"The Mousecape helper was installed." = "The Mousecape helper was installed.";
+
+/* Helper tool: uninstall success description */
+"The Mousecape helper was uninstalled." = "The Mousecape helper was uninstalled.";
+
+/* Helper tool: failure fallback description */
+"The action did not complete successfully." = "The action did not complete successfully.";
+
+/* Preferences window title */
+"Preferences" = "Preferences";
+
+/* MightyMouse import panel message */
+"Choose a MightyMouse file to import" = "Choose a MightyMouse file to import";
+
+/* MightyMouse import default author */
+"Unknown" = "Unknown";
+
+/* INF theme error: no INF file found */
+"Windows cursor theme contains no INF file." = "Windows cursor theme contains no INF file.";
+
+/* INF theme error: unable to parse INF */
+"Unable to parse Windows cursor theme INF file." = "Unable to parse Windows cursor theme INF file.";
+
+/* INF theme error: missing cursor file for role */
+"Missing cursor file for role %@: %@" = "Missing cursor file for role %@: %@";
+
+/* INF theme error: unable to parse cursor file for role */
+"Unable to parse cursor file for role %@: %@" = "Unable to parse cursor file for role %@: %@";
+
+/* Cursor file error: unsupported format */
+"Unsupported Windows cursor file type." = "Unsupported Windows cursor file type.";
+
+/* Cursor compose error: composition failed */
+"Unable to compose cursor frames for %@." = "Unable to compose cursor frames for %@.";
+
+/* Import path error: path does not exist */
+"Windows cursor path does not exist." = "Windows cursor path does not exist.";
+
+/* Import result error: no cursors imported */
+"No Windows cursors were imported." = "No Windows cursors were imported.";
+
+/* Default library name for unnamed cursor themes */
+"Windows Cursor" = "Windows Cursor";
+
+/* Helper tool: menu item title (install) */
+"Install Helper Tool" = "Install Helper Tool";
+
+/* Helper tool: menu item title (uninstall) */
+"Uninstall Helper Tool" = "Uninstall Helper Tool";
+
+/* Mousecape import panel message */
+"Choose a Mousecape to import" = "Choose a Mousecape to import";

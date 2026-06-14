@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Alex Zielenski. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
 
 typedef NS_ENUM(NSUInteger, MCCursorScale) {
     MCCursorScaleNone = 000,

@@ -118,7 +118,7 @@ const char MCInvalidateContext;
 
 // Tell OSX that our view can accept images to be dragged in
 - (void)registerTypes {
-	[self registerForDraggedTypes:[NSArray arrayWithObjects:NSPasteboardTypeTIFF, NSFilenamesPboardType, nil]];
+	[self registerForDraggedTypes:@[NSPasteboardTypeTIFF, NSPasteboardTypeFileURL]];
 }
 
 - (void)viewDidMoveToWindow {
