@@ -60,13 +60,34 @@ static NSBitmapImageRep *MCCurDecodeICOCursorData(NSData *imageData, NSError **e
     NSUInteger andRowBytes = ((actualWidth + 31) / 32) * 4;
     NSUInteger andSize = andRowBytes * actualHeight;
 
-    NSUInteger pixelDataOffset = bmpHeaderSize;
+    NSUInteger paletteSize = 0;
+    if (bitCount == 8) {
+        paletteSize = 256 * 4;
+    } else if (bitCount == 4) {
+        paletteSize = 16 * 4;
+    }
+
+    NSUInteger pixelDataOffset = bmpHeaderSize + paletteSize;
     NSUInteger andMaskOffset = pixelDataOffset + xorSize;
 
     if (andMaskOffset + andSize > length) {
         if (error) *error = [NSError errorWithDomain:MCErrorDomain code:MCErrorInvalidCapeCode
                                             userInfo:@{ NSLocalizedDescriptionKey: @"CUR image data truncated." }];
         return nil;
+    }
+
+    // Parse palette if present
+    uint8_t palette[256 * 4];
+    if (bitCount == 8 || bitCount == 4) {
+        NSUInteger paletteBytes = bmpHeaderSize + paletteSize;
+        if (paletteBytes > length) {
+            if (error) *error = [NSError errorWithDomain:MCErrorDomain code:MCErrorInvalidCapeCode
+                                                userInfo:@{ NSLocalizedDescriptionKey: @"CUR palette truncated." }];
+            return nil;
+        }
+        for (NSUInteger i = 0; i < paletteSize; i++) {
+            palette[i] = bytes[bmpHeaderSize + i];
+        }
     }
 
     NSBitmapImageRep *imageRep = [[NSBitmapImageRep alloc]
@@ -112,6 +133,51 @@ static NSBitmapImageRep *MCCurDecodeICOCursorData(NSData *imageData, NSError **e
                 pixelData[dstPixelOffset + 0] = bytes[srcPixelOffset + 2];
                 pixelData[dstPixelOffset + 1] = bytes[srcPixelOffset + 1];
                 pixelData[dstPixelOffset + 2] = bytes[srcPixelOffset + 0];
+                pixelData[dstPixelOffset + 3] = 255;
+            }
+        }
+    } else if (bitCount == 8) {
+        for (NSUInteger y = 0; y < actualHeight; y++) {
+            NSUInteger srcRowOffset = pixelDataOffset + (actualHeight - 1 - y) * xorRowBytes;
+            NSUInteger dstRowOffset = y * actualWidth * 4;
+            for (NSUInteger x = 0; x < actualWidth; x++) {
+                NSUInteger paletteIndex = bytes[srcRowOffset + x];
+                NSUInteger palEntry = paletteIndex * 4;
+                NSUInteger dstPixelOffset = dstRowOffset + x * 4;
+                pixelData[dstPixelOffset + 0] = palette[palEntry + 2];
+                pixelData[dstPixelOffset + 1] = palette[palEntry + 1];
+                pixelData[dstPixelOffset + 2] = palette[palEntry + 0];
+                pixelData[dstPixelOffset + 3] = 255;
+            }
+        }
+    } else if (bitCount == 4) {
+        for (NSUInteger y = 0; y < actualHeight; y++) {
+            NSUInteger srcRowOffset = pixelDataOffset + (actualHeight - 1 - y) * xorRowBytes;
+            NSUInteger dstRowOffset = y * actualWidth * 4;
+            for (NSUInteger x = 0; x < actualWidth; x++) {
+                NSUInteger byteIndex = srcRowOffset + (x / 2);
+                BOOL highNibble = (x % 2 == 0);
+                uint8_t paletteIndex = highNibble ? ((bytes[byteIndex] >> 4) & 0x0F) : (bytes[byteIndex] & 0x0F);
+                NSUInteger palEntry = paletteIndex * 4;
+                NSUInteger dstPixelOffset = dstRowOffset + x * 4;
+                pixelData[dstPixelOffset + 0] = palette[palEntry + 2];
+                pixelData[dstPixelOffset + 1] = palette[palEntry + 1];
+                pixelData[dstPixelOffset + 2] = palette[palEntry + 0];
+                pixelData[dstPixelOffset + 3] = 255;
+            }
+        }
+    } else if (bitCount == 1) {
+        for (NSUInteger y = 0; y < actualHeight; y++) {
+            NSUInteger srcRowOffset = pixelDataOffset + (actualHeight - 1 - y) * xorRowBytes;
+            NSUInteger dstRowOffset = y * actualWidth * 4;
+            for (NSUInteger x = 0; x < actualWidth; x++) {
+                NSUInteger byteIndex = srcRowOffset + (x / 8);
+                NSUInteger bitIndex = 7 - (x % 8);
+                BOOL white = (bytes[byteIndex] >> bitIndex) & 1;
+                NSUInteger dstPixelOffset = dstRowOffset + x * 4;
+                pixelData[dstPixelOffset + 0] = white ? 255 : 0;
+                pixelData[dstPixelOffset + 1] = white ? 255 : 0;
+                pixelData[dstPixelOffset + 2] = white ? 255 : 0;
                 pixelData[dstPixelOffset + 3] = 255;
             }
         }
